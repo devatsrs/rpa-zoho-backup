@@ -7,41 +7,42 @@ if exist('email')
 if exist('nextbtn')
     click nextbtn
 
-// type password as GKBLabs@1234
+// type password as 12345678
 if exist('password')
-    type password as Welcome_100
+    type password as 12345678
 
 //login 
 if exist('nextbtn')
     click nextbtn
 
 // remind me later 
-if exist('rmLaterBtn')
-    click rmLaterBtn
+// if exist('rmLaterBtn')
+//    click rmLaterBtn
 
 // if remind me later not present
-if exist('failbutton')
-    click failbutton
+// if exist('failbutton')
+//    click failbutton
 
-wait 1 seconds
+// wait 1 seconds
 
 // open crm home 
 https://crm.zoho.in/crm/ShowHomePage.do
 
-wait 4 seconds
+// wait 1 seconds
 
 // Go to settings  Gear icon
 click tab_Setup
 
-wait 2 seconds
+// wait 1 seconds
 
 // Click export under data administator
 click #data_export > link-to > a
 
-// click submit 
-click Submit
+// click Submit
+click export_btn.png
 
-click ok_btn.png
+keyboard [enter]
+
 
 
  
