@@ -15,7 +15,7 @@ echo Today  is `date`
 
 // ####### SET DOWNLOAD LOCATION
 
-download_location  =  "D:\\tagui\\"
+download_location  =  "C:\\LittleGreenPharma\\Little Green Pharma\\24 CyberSec and ICT - 99 - Zoho Backups\\"
 
 download_location_date =  download_location + date  
 
@@ -36,7 +36,7 @@ download to `download_location_date`
 
 https://accounts.zoho.in/signin
 
-wait 10
+wait 20
 
 // check if login screen 
 if exist('email')
@@ -85,7 +85,7 @@ https://crm.zoho.com/crm/org721637160/settings/data-backup
 // if exist('dbConfigurationFreeEditionButton')
 //    click //*[@id="dbConfigurationFreeEditionButton"]/button
 
-wait 10 
+wait 20 
 
 if text() contains 'Stop Backup'
     echo Previous backup is still running
@@ -107,18 +107,18 @@ if text() contains 'Your latest data backup is running'
 
 // wait while popup appears 
 // increase to 300  5 min
-wait 150 
+wait 300 
 
 
 if text() contains 'Data backup is ready for download'
     echo Data backup is ready for download
 
-wait 5
+wait 10
 
 // Refresh the page to see links 
 keyboard [ctrl]r 
 
-wait 10 
+wait 20 
 
 
 // ####### DOWNLOAD FILES #######
@@ -127,7 +127,7 @@ wait 10
 // Download Data File 
 if exist('dbDataLink')
     click //*[@id="dbDataLink"]/div/a
-    wait 30 
+    wait 60 
 
 if !exist('dbDataLink')
     echo Download link not present
@@ -138,7 +138,7 @@ if !exist('dbAttachmentLink')
 // Download Attachment File 
 if exist('dbAttachmentLink')
     click //*[@id="dbAttachmentLink"]/div/a
-    wait 30 
+    wait 60 
     
 
 // wait to finish download -  increase to 5 min = 300 seconds
@@ -157,7 +157,7 @@ wait 50
 // email to customer 
 https://outlook.office.com/mail/
 
-wait 10 
+wait 20 
 
 if exist('idSIButton9')
     type email as orders@littlegreenpharma.com
@@ -189,9 +189,16 @@ click new_message.png
 wait 5 
 
 // type email_to.png as celia@lgpharma.com.au,barb@lgpharma.com.au,r.stanimirovic@lgp.global,h.birch@lgp.global,info@asnsolutions.com.au
-type email_to.png as sdeven@gkblabs.com
+// type email_to.png as sdeven@gkblabs.com,
+
+type email_to.png as n.cousins@lgp.global,
 
 keyboard [tab]
+
+wait 2
+
+type email_cc.png as info@asnsolutions.com.au,
+
 
 // switch to subject
 //              click email_subject.png 
