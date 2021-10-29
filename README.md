@@ -8,7 +8,7 @@ RPA/BOT for Zoho backup download automation
 
 ## How to execute command
 
-tagui zoho_download.tag
+tagui zoho_download.tag -t
 
 ## Turbo mode to run 10X faster
 
