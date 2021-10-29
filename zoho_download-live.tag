@@ -1,7 +1,36 @@
-// open zoho signin page
+// ####### FUNCTION TO GET CURRENT DATE 
+
+https://www.google.com/search?q=date
+
+// read date to variable
+read //*[@id="rso"]/div[1]/div/div/div[1]/div/span to date 
+
+echo Today  is `date`
+
+// ####### FUNCTION TO GET CURRENT DATE 
+
+
+
+
+
+// ####### SET DOWNLOAD LOCATION
+
+download_location  =  "D:\\tagui\\"
+
+download_location_date =  download_location + date  
+
+echo `download_location_date`
+
+// ####### SET DOWNLOAD LOCATION
+
+
+
+
+// ####### open zoho signin page #######
+
 https://accounts.zoho.in/signin
 
-wait 10 seconds
+wait 10 
 
 // check if login screen 
 if exist('email')
@@ -27,7 +56,15 @@ if exist('nextbtn')
 // if exist('failbutton')
 //    click failbutton
 
-// wait 1 seconds
+wait 2 
+
+// ####### open zoho signin page #######
+
+
+
+
+
+// ####### BACKUP PAGE #######
 
 https://crm.zoho.com/crm/org721637160/settings/data-backup
 
@@ -42,14 +79,49 @@ https://crm.zoho.com/crm/org721637160/settings/data-backup
 // if exist('dbConfigurationFreeEditionButton')
 //    click //*[@id="dbConfigurationFreeEditionButton"]/button
 
-wait 30 seconds
+wait 10 
 
-// download to [D:\\tagui]
+if text() contains 'Stop Backup'
+    echo Previous backup is still running
+    wait 50 
 
+if text() contains 'Choose when to backup'
+    echo Trying to create new backup files in zoho.
+
+// radio Download immediately   -- click //*[@id="dbRepeatType"]/lyte-radiobutton[4]/label/input
+click Download immediately
+
+// Download button 
+click //*[@id="configBtn"]/button
+
+wait 5 
+
+if text() contains 'Your latest data backup is running'
+    echo Your latest data backup is running
+
+// wait while popup appears 
+// increase to 300  5 min
+wait 60 
+
+
+if text() contains 'Data backup is ready for download'
+    echo Data backup is ready for download
+
+wait 5
+
+// Refresh the page to see links 
+keyboard [ctrl]r 
+
+wait 10 
+
+
+// ####### DOWNLOAD FILES #######
+
+ 
 // Download Data File 
 if exist('dbDataLink')
     click //*[@id="dbDataLink"]/div/a
-    wait 30 seconds
+    wait 30 
 
 if !exist('dbDataLink')
     echo Download link not present
@@ -60,45 +132,57 @@ if !exist('dbAttachmentLink')
 // Download Attachment File 
 if exist('dbAttachmentLink')
     click //*[@id="dbAttachmentLink"]/div/a
-    wait 30 seconds
+    wait 30 
     
+
+// wait to finish download -  increase to 5 min = 300 seconds
+wait 50     
 
 
 // ###########################
 
 
-// #keyboard [ctrl]t
- 
+
+// ####### EMAIL TO CUSTOMER  #######
+
+
+// ####### LOGIN TO OUTLOOK  #######
+
 // email to customer 
 https://outlook.office.com/mail/
 
-// wait 1 seconds
+wait 10 
 
 if exist('idSIButton9')
     type email as orders@littlegreenpharma.com
     click idSIButton9
-    wait 1 seconds
+    wait 1 
     type password as Suk47276
     // submit 
     click idSIButton9
 
-wait 5 seconds
+
+wait 5 
     
 // Yes - Stay sign in 
 if exist('idSIButton9')
     click idSIButton9 	
 
-wait 5 seconds
+wait 5 
+
+// ####### LOGIN TO OUTLOOK  #######
+
+
+
+
+// ####### SEND EMAIL  #######
 
 // click new message
 click new_message.png
 
-// //*[@id="id__7"]
+wait 5 
 
-// type email_to.png as celia@lgpharma.com.au,barb@lgpharma.com.au,r.stanimirovic@lgp.global,h.birch@lgp.global,info@asnsolutions.com.au,sdeven@gkblabs.com
-
-wait 5 seconds
-
+// type email_to.png as celia@lgpharma.com.au,barb@lgpharma.com.au,r.stanimirovic@lgp.global,h.birch@lgp.global,info@asnsolutions.com.au
 type email_to.png as sdeven@gkblabs.com
 
 keyboard [tab]
@@ -119,3 +203,6 @@ type //br as  Backup Automation Completed
 
 // click send button 
 click email_send.png
+
+// ####### EMAIL TO CUSTOMER  #######
+
