@@ -19,18 +19,24 @@ download_location  =  "D:\\tagui\\"
 
 download_location_date =  download_location + date  
 
-echo `download_location_date`
+echo Download Location is `download_location_date`
+
+wait 2
+
+download to `download_location_date`
+//download to D:\tagui\Oct 29 2021
+              
 
 // ####### SET DOWNLOAD LOCATION
 
 
 
+// ####### zoho sign in 
 
-// ####### open zoho signin page #######
 
 https://accounts.zoho.in/signin
 
-wait 10 
+wait 10
 
 // check if login screen 
 if exist('email')
@@ -49,16 +55,16 @@ if exist('nextbtn')
     click nextbtn
 
 // remind me later 
-// if exist('rmLaterBtn')
-//    click rmLaterBtn
+if exist('rmLaterBtn')
+    click rmLaterBtn
 
 // if remind me later not present
 // if exist('failbutton')
 //    click failbutton
 
-wait 2 
+wait 2
 
-// ####### open zoho signin page #######
+
 
 
 
@@ -88,20 +94,20 @@ if text() contains 'Stop Backup'
 if text() contains 'Choose when to backup'
     echo Trying to create new backup files in zoho.
 
-// radio Download immediately   -- click //*[@id="dbRepeatType"]/lyte-radiobutton[4]/label/input
+// radio Download immediately   click //*[@id="dbRepeatType"]/lyte-radiobutton[4]/label/input
 click Download immediately
 
 // Download button 
 click //*[@id="configBtn"]/button
 
-wait 5 
+wait 20 
 
 if text() contains 'Your latest data backup is running'
     echo Your latest data backup is running
 
 // wait while popup appears 
 // increase to 300  5 min
-wait 60 
+wait 150 
 
 
 if text() contains 'Data backup is ready for download'
@@ -203,6 +209,8 @@ type //br as  Backup Automation Completed
 
 // click send button 
 click email_send.png
+
+wait 5
 
 // ####### EMAIL TO CUSTOMER  #######
 
