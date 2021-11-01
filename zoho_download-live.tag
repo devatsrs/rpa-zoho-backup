@@ -21,7 +21,7 @@ download_location_date =  download_location + date
 
 echo Download Location is `download_location_date`
 
-wait 2
+wait 10
 
 download to `download_location_date`
 //download to D:\tagui\Oct 29 2021
@@ -45,6 +45,13 @@ if exist('email')
 
 if exist('nextbtn')
     click nextbtn
+
+wait 20
+
+
+// type password as 12345678
+if exist('pwd')
+    type pwd as H0ll1fer
 
 // type password as 12345678
 if exist('password')
@@ -85,7 +92,7 @@ https://crm.zoho.com/crm/org721637160/settings/data-backup
 // if exist('dbConfigurationFreeEditionButton')
 //    click //*[@id="dbConfigurationFreeEditionButton"]/button
 
-wait 20 
+wait 60 
 
 if text() contains 'Stop Backup'
     echo Previous backup is still running
@@ -98,7 +105,7 @@ if text() contains 'Choose when to backup'
 click Download immediately
 
 // Download button 
-click //*[@id="configBtn"]/button
+// click //*[@id="configBtn"]/button
 
 wait 20 
 
@@ -186,19 +193,18 @@ wait 5
 // click new message
 click new_message.png
 
-wait 5 
+wait 10 
 
 // type email_to.png as celia@lgpharma.com.au,barb@lgpharma.com.au,r.stanimirovic@lgp.global,h.birch@lgp.global,info@asnsolutions.com.au
-// type email_to.png as sdeven@gkblabs.com,
-
-type email_to.png as n.cousins@lgp.global,
+// type email_to.png as n.cousins@lgp.global,
+type email_to.png as sdeven@gkblabs.com,
 
 keyboard [tab]
 
-wait 2
+wait 10
 
-type email_cc.png as info@asnsolutions.com.au,
-
+// type email_cc.png as info@asnsolutions.com.au,
+type email_cc.png as shriramsoft@gmail.com,
 
 // switch to subject
 //              click email_subject.png 
