@@ -39,12 +39,12 @@ https://accounts.zoho.in/signin
 wait 20
 
 // check if login screen 
-if exist('email')
-    type email as holly@lgpharma.com.au
+if exist('login_id')
+    type login_id as holly@lgpharma.com.au
+    click Next
 
-
-if exist('nextbtn')
-    click nextbtn
+// if exist('nextbtn')
+//    click nextbtn
 
 wait 20
 
@@ -114,7 +114,7 @@ if text() contains 'Your latest data backup is running'
 
 // wait while popup appears 
 // increase to 300  5 min
-wait 300 
+wait 300
 
 
 if text() contains 'Data backup is ready for download'
@@ -200,7 +200,8 @@ wait 10
 // type email_to.png as n.cousins@lgp.global,
 // type email_to.png as sdeven@gkblabs.com,
 
-keyboard sdeven@gkblabs.com,
+// keyboard sdeven@gkblabs.com,
+keyboard n.cousins@lgp.global,
 
 wait 5
 
@@ -209,7 +210,8 @@ keyboard [tab][tab][tab]
 wait 5
 
 // type email_cc.png as info@asnsolutions.com.au,
-keyboard shriramsoft@gmail.com,
+// keyboard shriramsoft@gmail.com,
+keyboard info@asnsolutions.com.au,
 
 wait 5
 
