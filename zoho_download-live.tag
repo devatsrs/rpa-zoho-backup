@@ -105,7 +105,7 @@ if text() contains 'Choose when to backup'
 click Download immediately
 
 // Download button 
-// click //*[@id="configBtn"]/button
+click //*[@id="configBtn"]/button
 
 wait 20 
 
@@ -156,6 +156,8 @@ wait 50
 
 
 
+
+
 // ####### EMAIL TO CUSTOMER  #######
 
 
@@ -187,7 +189,6 @@ wait 5
 
 
 
-
 // ####### SEND EMAIL  #######
 
 // click new message
@@ -197,18 +198,26 @@ wait 10
 
 // type email_to.png as celia@lgpharma.com.au,barb@lgpharma.com.au,r.stanimirovic@lgp.global,h.birch@lgp.global,info@asnsolutions.com.au
 // type email_to.png as n.cousins@lgp.global,
-type email_to.png as sdeven@gkblabs.com,
+// type email_to.png as sdeven@gkblabs.com,
 
-keyboard [tab]
+keyboard sdeven@gkblabs.com,
 
-wait 10
+wait 5
+
+keyboard [tab][tab][tab]
+
+wait 5
 
 // type email_cc.png as info@asnsolutions.com.au,
-type email_cc.png as shriramsoft@gmail.com,
+keyboard shriramsoft@gmail.com,
+
+wait 5
 
 // switch to subject
 //              click email_subject.png 
-click Add a subject 
+// click Add a subject 
+keyboard [tab]
+
 
 // type subject 
 type Add a subject as Backup Automation Completed 
