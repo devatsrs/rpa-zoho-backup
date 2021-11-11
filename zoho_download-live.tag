@@ -50,8 +50,8 @@ wait 20
 
 
 // type password as 12345678
-if exist('pwd')
-    type pwd as H0ll1fer
+// if exist('pwd')
+//    type pwd as H0ll1fer
 
 // type password as 12345678
 if exist('password')
@@ -114,7 +114,7 @@ if text() contains 'Your latest data backup is running'
 
 // wait while popup appears 
 // increase to 300  5 min
-wait 300
+wait 120
 
 
 if text() contains 'Data backup is ready for download'
@@ -166,7 +166,7 @@ wait 50
 // email to customer 
 https://outlook.office.com/mail/
 
-wait 20 
+wait 40 
 
 if exist('idSIButton9')
     type email as orders@littlegreenpharma.com
